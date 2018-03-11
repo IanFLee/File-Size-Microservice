@@ -1,9 +1,15 @@
+function cl(x){console.log(x)}
 var express = require('express');
 var app = express();
 
 app.get("/", function (request, response) {
   //response.sendFile(__dirname + '/views/index.html');
-  response.send("<form><button type='button'>upload file</button><button type='submit'>submit</button></form>");
+  response.send("<form action='/upload'><input name='bob' value='fred' /><button type='button'>upload file</button><button type='submit'>submit</button></form>");
+});
+
+app.get("/upload", function (request, response) {
+  cl(request.params);
+  response.send(request.params.bob);
 });
 
 
