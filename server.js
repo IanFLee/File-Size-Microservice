@@ -10,13 +10,10 @@ app.get("/", function (request, response) {
 });
 
 
-app.post('/upload', upload.single('avatar'), function (req, res, next) {
-  // req.file is the `avatar` file 
-  // req.body will hold the text fields, if there were any 
-  cl(req.file);
-  cl(req.
-  res.send('thx');
-})
+app.post('/upload', upload.single('file'), function (req, res, next) {
+  var size = req.file.size;
+  res.send({size:size});
+});
 
 
 app.get("/upload", function (request, response) {
