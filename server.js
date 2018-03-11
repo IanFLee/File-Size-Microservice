@@ -16,8 +16,8 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
 */
 
 app.get("/upload", function (request, response) {
-  cl(request);
-  response.send(request.params.bob);
+  cl(request.query.fred);
+  response.send(request.query.fred);
 });
 
 
