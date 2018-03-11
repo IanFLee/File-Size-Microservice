@@ -4,8 +4,8 @@ var app = express();
 // var upload = multer({ dest: 'uploads/' });
 
 app.get("/", function (request, response) {
-  //response.sendFile(__dirname + '/views/index.html');
-  response.send("<form action='/upload' method='post'><button type='button'>upload file</button><button type='submit' name='bob' value='fred'>submit</button></form>");
+  response.sendFile(__dirname + '/views/index.html');
+  //response.send("<form action='/upload' method='post'><button type='button'>upload file</button><button type='submit' name='bob' value='fred'>submit</button></form>");
 });
 
 /*
@@ -15,7 +15,7 @@ app.post('/profile', upload.single('avatar'), function (req, res, next) {
 })
 */
 
-app.post("/upload", function (request, response) {
+app.get("/upload", function (request, response) {
   cl(request.params);
   response.send(request.params.bob);
 });
