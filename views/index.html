@@ -20,7 +20,8 @@
   </head>
   <body>
     
-    <form action="/upload" method="get">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" />
       <button type="submit" name="fred" value="bob">
         submit
       </button>
